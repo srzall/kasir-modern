@@ -92,7 +92,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <footer className="bg-white border-t border-slate-100 py-10">
             <div className="max-w-7xl mx-auto px-6 text-center">
                <p className="text-[9px] font-bold text-slate-400 tracking-[0.5em] uppercase">
-                 © 2026 MITRA USAHA • LOMBOK BARAT
+                 © 2026 MITRA USAHA • LOMBOK UTARA
                </p>
             </div>
           </footer>
