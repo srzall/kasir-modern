@@ -1,35 +1,49 @@
-export default function GudangPage() {
-  // Data sementara untuk melihat tampilan
-  const dummyData = [
-    { id: 1, name: "Beras 5kg", stock: 15, price: 75000 },
-    { id: 2, name: "Minyak Goreng 1L", stock: 4, price: 18000 },
-  ];
+import { sql } from "@vercel/postgres";
+import Link from "next/link";
+
+export default async function GudangPage() {
+  // Ambil data asli dari database
+  const { rows } = await sql`SELECT * FROM products ORDER BY name ASC`;
 
   return (
-    <div>
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold">Stok Gudang</h1>
-        <button className="bg-blue-600 text-white px-4 py-2 rounded-lg font-medium">+ Tambah Barang</button>
+    <div className="animate-fadeIn">
+      {/* Bagian Judul yang Bersih */}
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6 border-b pb-8 border-slate-100">
+        <div>
+          <h2 className="text-4xl font-black text-slate-900 tracking-tight uppercase">Data Inventaris</h2>
+          <p className="text-slate-500 font-medium text-lg mt-2">Kelola seluruh aset produk Mitra Usaha secara akurat.</p>
+        </div>
+        <Link href="/gudang/tambah" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-black text-xs tracking-widest shadow-lg shadow-blue-200 transition-all active:scale-95">
+          + TAMBAH PRODUK BARU
+        </Link>
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm border overflow-hidden">
+      {/* Kartu Besar untuk Tabel ala List SIPETA */}
+      <div className="bg-white rounded-[2.5rem] shadow-xl shadow-slate-100/50 border border-slate-100 overflow-hidden">
         <table className="w-full text-left">
-          <thead className="bg-slate-50 border-b">
-            <tr className="text-slate-500 text-sm uppercase">
-              <th className="p-4">Nama Produk</th>
-              <th className="p-4">Stok</th>
-              <th className="p-4">Harga</th>
-              <th className="p-4 text-right">Aksi</th>
+          <thead className="bg-slate-50/50 border-b border-slate-100">
+            <tr className="text-slate-400 text-[11px] font-black uppercase tracking-[0.2em]">
+              <th className="p-8">No</th>
+              <th className="p-8">Informasi Produk</th>
+              <th className="p-8 text-center">Status Stok</th>
+              <th className="p-8 text-right">Harga Jual</th>
             </tr>
           </thead>
-          <tbody className="divide-y">
-            {dummyData.map((item) => (
-              <tr key={item.id} className="hover:bg-slate-50 transition">
-                <td className="p-4 font-medium">{item.name}</td>
-                <td className="p-4 text-sm font-semibold text-blue-600">{item.stock} Unit</td>
-                <td className="p-4 text-sm font-semibold">Rp {item.price.toLocaleString()}</td>
-                <td className="p-4 text-right">
-                  <button className="text-red-500 hover:underline text-sm font-medium">Hapus</button>
+          <tbody className="divide-y divide-slate-50">
+            {rows.map((item, index) => (
+              <tr key={item.id} className="hover:bg-blue-50/30 transition-colors group">
+                <td className="p-8 text-sm font-black text-slate-300">{index + 1}</td>
+                <td className="p-8">
+                  <p className="font-bold text-slate-800 text-lg group-hover:text-blue-600 transition-colors">{item.name}</p>
+                  <p className="text-xs text-slate-400 font-medium mt-1 uppercase tracking-wider">REF ID: {item.id}</p>
+                </td>
+                <td className="p-8 text-center">
+                  <span className={`px-4 py-2 rounded-full text-[10px] font-black tracking-widest ${item.stock <= 5 ? 'bg-red-100 text-red-600' : 'bg-green-100 text-green-600'}`}>
+                    {item.stock} UNIT TERSEDIA
+                  </span>
+                </td>
+                <td className="p-8 text-right font-mono font-black text-slate-700 text-xl">
+                  Rp {Number(item.price).toLocaleString('id-ID')}
                 </td>
               </tr>
             ))}
