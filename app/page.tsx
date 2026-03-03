@@ -25,10 +25,11 @@ export default function HomePage() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/kasir" className="bg-blue-600 hover:bg-blue-500 text-white px-10 py-4 rounded-full font-black text-sm tracking-widest transition-all shadow-xl shadow-blue-500/30 active:scale-95">
+            <Link href="/kasir" className="w-60 bg-blue-600 hover:bg-blue-500 text-white py-4 rounded-full font-black text-sm tracking-widest transition-all shadow-xl shadow-blue-500/30 active:scale-95 text-center flex items-center justify-center">
               MULAI TRANSAKSI →
             </Link>
-            <Link href="/gudang" className="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-10 py-4 rounded-full font-black text-sm tracking-widest transition-all backdrop-blur-md">
+            
+            <Link href="/gudang" className="w-60 bg-white/10 hover:bg-white/20 text-white border border-white/30 py-4 rounded-full font-black text-sm tracking-widest transition-all backdrop-blur-md text-center flex items-center justify-center" >
               PANTAU GUDANG
             </Link>
           </div>
