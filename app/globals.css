@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F1F5F9; /* Abu-abu sangat muda */
-  --foreground: #334155; /* Tulisan abu-abu tua */
+  --background: #F8FAFC; /* Abu-abu sangat muda */
+/* Tulisan abu-abu tua */
 }
 
 body {
