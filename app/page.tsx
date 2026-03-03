@@ -17,7 +17,7 @@ export default function HomePage() {
         <div className="relative z-20 max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter drop-shadow-lg">
             SOLUSI CERDAS <br />
-            <span className="text-blue-400 ">KELOLA DAGANGAN</span>
+            <span className="text-emerald-400 ">KELOLA DAGANGAN</span>
           </h1>
           
           <p className="text-slate-200 max-w-2xl mx-auto text-lg mb-12 leading-relaxed drop-shadow-md">
@@ -25,7 +25,7 @@ export default function HomePage() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/kasir" className="w-60 bg-blue-600 hover:bg-blue-500 text-white py-4 rounded-full font-black text-sm tracking-widest transition-all shadow-xl shadow-blue-500/30 active:scale-95 text-center flex items-center justify-center">
+            <Link href="/kasir" className="w-60 bg-emerald-600 hover:bg-emerald-500 text-white py-4 rounded-full font-black text-sm tracking-widest transition-all shadow-xl shadow-emerald-500/30 active:scale-95 text-center flex items-center justify-center">
               MULAI TRANSAKSI →
             </Link>
             
@@ -39,10 +39,10 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-6 mt-16 relative z-20 pb-20">
         <div className="text-center mb-16 relative z-20">
           <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tighter uppercase">
-            RINGKASAN <span className="text-blue-600">INFORMASI BARANG</span>
+            RINGKASAN <span className="text-emerald-600">INFORMASI BARANG</span>
           </h2>
 
-          <div className="h-1.5 w-20 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+          <div className="h-1.5 w-20 bg-emerald-600 mx-auto mt-4 rounded-full"></div>
           <p className="text-slate-400 mt-4 font-bold max-w-xl mx-auto uppercase text-[10px] tracking-[0.4em]">
             Data stok dan penjualan terupdate hari ini
           </p>
@@ -67,9 +67,9 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-6 mb-24 relative z-20">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tighter uppercase">
-            MENGAPA MEMILIH <span className="text-blue-600 ">MITRA USAHA?</span>
+            MENGAPA MEMILIH <span className="text-emerald-600 ">MITRA USAHA?</span>
           </h2>
-          <div className="h-1.5 w-24 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+          <div className="h-1.5 w-24 bg-emerald-600 mx-auto mt-4 rounded-full"></div>
           <p className="text-slate-500 mt-6 font-medium max-w-xl mx-auto uppercase text-[10px] tracking-[0.3em]">
             Keunggulan sistem kami untuk percepatan bisnis digital Anda
           </p>
@@ -81,7 +81,7 @@ export default function HomePage() {
               title: "Real-Time Sync",
               desc: "Stok barang di gudang dan kasir sinkron otomatis saat itu juga.",
               icon: "⚡",
-              color: "bg-blue-50 text-blue-600"
+              color: "bg-emerald-50 text-emerald-600"
             },
             {
               title: "Keamanan Data",
@@ -102,7 +102,7 @@ export default function HomePage() {
               color: "bg-purple-50 text-purple-600"
             }
           ].map((feature, i) => (
-            <div key={i} className="group bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/30 hover:shadow-blue-500/10 transition-all hover:-translate-y-2">
+            <div key={i} className="group bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/30 hover:shadow-emerald-500/10 transition-all hover:-translate-y-2">
               <div className={`w-16 h-16 ${feature.color} rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform`}>
                 {feature.icon}
               </div>
@@ -121,9 +121,9 @@ export default function HomePage() {
   {/* JUDUL SECTION */}
   <div className="text-center mb-16">
     <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tighter uppercase">
-      HUBUNGI <span className="text-blue-600">MITRA USAHA</span>
+      HUBUNGI <span className="text-emerald-600">MITRA USAHA</span>
     </h2>
-    <div className="h-1.5 w-20 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+    <div className="h-1.5 w-20 bg-emerald-600 mx-auto mt-4 rounded-full"></div>
     <p className="text-slate-400 mt-6 font-bold max-w-xl mx-auto uppercase text-[10px] tracking-[0.4em]">
       Layanan Support & Informasi Alamat Kantor Pusat
     </p>
@@ -134,7 +134,7 @@ export default function HomePage() {
     {/* 1. KARTU ALAMAT UTAMA */}
     <div className="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/50 flex flex-col justify-between">
       <div>
-        <div className="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-8">
+        <div className="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mb-8">
           📍
         </div>
         <h3 className="text-xl font-black text-slate-900 mb-4 tracking-tight uppercase ">Alamat Kantor</h3>
@@ -145,7 +145,7 @@ export default function HomePage() {
         </p>
       </div>
       <div className="mt-8 pt-8 border-t border-slate-50">
-        <span className="text-[10px] font-black text-blue-600 tracking-[0.2em] uppercase">Pusat Digitalisasi UMKM</span>
+        <span className="text-[10px] font-black text-emerald-600 tracking-[0.2em] uppercase">Pusat Digitalisasi UMKM</span>
       </div>
     </div>
 
@@ -166,7 +166,7 @@ export default function HomePage() {
         </a>
         
         <a href="#" className="flex items-center gap-4 group">
-          <div className="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center group-hover:bg-blue-500 group-hover:text-white transition-all font-black text-xs">IG</div>
+          <div className="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center group-hover:bg-emerald-500 group-hover:text-white transition-all font-black text-xs">IG</div>
           <div>
             <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Instagram</p>
             <p className="text-sm font-bold text-slate-700">@mitrausaha.official</p>
@@ -184,8 +184,8 @@ export default function HomePage() {
     </div>
 
     {/* 3. KARTU JAM OPERASIONAL / MITRA */}
-    <div className="bg-[#020617] p-10 rounded-[2.5rem] shadow-2xl shadow-blue-900/20 text-white relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/20 blur-3xl rounded-full"></div>
+    <div className="bg-[#020617] p-10 rounded-[2.5rem] shadow-2xl shadow-emerald-900/20 text-white relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-600/20 blur-3xl rounded-full"></div>
       
       <div className="relative z-10">
         <div className="w-14 h-14 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-2xl mb-8">
@@ -198,14 +198,14 @@ export default function HomePage() {
             <span className="text-slate-400">Senin - Sabtu</span>
             <span className="font-bold">08:00 - 17:00</span>
           </div>
-          <div className="flex justify-between text-blue-400">
+          <div className="flex justify-between text-emerald-400">
             <span>Minggu</span>
             <span className="font-bold uppercase tracking-widest text-[10px]">Tutup</span>
           </div>
         </div>
 
         <div className="mt-10 p-4 bg-white/5 rounded-2xl border border-white/10">
-          <p className="text-[9px] font-black uppercase tracking-[0.2em] text-blue-400 mb-2 text-center">Sistem Terintegrasi</p>
+          <p className="text-[9px] font-black uppercase tracking-[0.2em] text-emerald-400 mb-2 text-center">Sistem Terintegrasi</p>
           <p className="text-[10px] text-slate-300 text-center leading-relaxed">
             Mitra Usaha menjamin keamanan data transaksi 24/7 untuk seluruh merchant di Lombok Utara.
           </p>

@@ -58,7 +58,7 @@ export default function KasirPage() {
         <div className="border-t pt-4">
           <div className="flex justify-between text-lg font-bold mb-4">
             <span>Total</span>
-            <span className="text-blue-600">Rp {totalHarga.toLocaleString()}</span>
+            <span className="text-emerald-600">Rp {totalHarga.toLocaleString()}</span>
           </div>
           <button 
             disabled={keranjang.length === 0}

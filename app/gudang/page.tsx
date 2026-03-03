@@ -13,7 +13,7 @@ export default async function GudangPage() {
           <h2 className="text-4xl font-black text-slate-900 tracking-tight uppercase">Data Inventaris</h2>
           <p className="text-slate-500 font-medium text-lg mt-2">Kelola seluruh aset produk Mitra Usaha secara akurat.</p>
         </div>
-        <Link href="/gudang/tambah" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-black text-xs tracking-widest shadow-lg shadow-blue-200 transition-all active:scale-95">
+        <Link href="/gudang/tambah" className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-2xl font-black text-xs tracking-widest shadow-lg shadow-emerald-200 transition-all active:scale-95">
           + TAMBAH PRODUK BARU
         </Link>
       </div>
@@ -31,10 +31,10 @@ export default async function GudangPage() {
           </thead>
           <tbody className="divide-y divide-slate-50">
             {rows.map((item, index) => (
-              <tr key={item.id} className="hover:bg-blue-50/30 transition-colors group">
+              <tr key={item.id} className="hover:bg-emerald-50/30 transition-colors group">
                 <td className="p-8 text-sm font-black text-slate-300">{index + 1}</td>
                 <td className="p-8">
-                  <p className="font-bold text-slate-800 text-lg group-hover:text-blue-600 transition-colors">{item.name}</p>
+                  <p className="font-bold text-slate-800 text-lg group-hover:text-emerald-600 transition-colors">{item.name}</p>
                   <p className="text-xs text-slate-400 font-medium mt-1 uppercase tracking-wider">REF ID: {item.id}</p>
                 </td>
                 <td className="p-8 text-center">
