@@ -32,9 +32,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   ];
 
   return (
-    <div className="flex min-h-screen bg-[#F8FAFC]">
+    <div className="flex min-h-screen bg-[#F8FAFC] overflow-x-hidden">
       
-      {/* 1. OVERLAY (Muncul saat Sidebar HP Terbuka) */}
+      {/* 1. OVERLAY (HP) */}
       {isMobileOpen && (
         <div 
           className="fixed inset-0 bg-emerald-950/60 backdrop-blur-sm z-[60] lg:hidden"
@@ -62,8 +62,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               <span className="text-[10px] font-bold text-emerald-500/40 tracking-[0.2em] uppercase mt-1">Lombok Utara</span>
             </div>
           </div>
-          
-          <button onClick={() => setIsMobileOpen(false)} className="lg:hidden text-emerald-400 hover:bg-emerald-900/50 p-2 rounded-xl">
+          <button onClick={() => setIsMobileOpen(false)} className="lg:hidden text-emerald-400 p-2 rounded-xl">
             <X size={24} />
           </button>
         </div>
@@ -79,7 +78,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 onClick={() => setIsMobileOpen(false)}
                 className={`flex items-center justify-between px-6 py-4 rounded-2xl transition-all duration-300 group ${
                   isActive 
-                  ? "bg-white text-emerald-950 shadow-[0_10px_25px_rgba(0,0,0,0.2)] scale-[1.02]" 
+                  ? "bg-white text-emerald-950 shadow-xl scale-[1.02]" 
                   : "text-emerald-100/40 hover:bg-white/5 hover:text-white"
                 }`}
               >
@@ -97,67 +96,67 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
         {/* LOGOUT */}
         <div className="p-6 border-t border-white/5">
-          <button 
-            onClick={handleLogout}
-            className="flex items-center gap-4 w-full px-6 py-4 rounded-2xl text-[11px] font-black uppercase tracking-widest text-red-400 hover:bg-red-500/10 transition-all italic border border-transparent hover:border-red-500/20"
-          >
+          <button onClick={handleLogout} className="flex items-center gap-4 w-full px-6 py-4 rounded-2xl text-[11px] font-black uppercase tracking-widest text-red-400 hover:bg-red-500/10 transition-all italic">
             <LogOut size={20} /> Logout System
           </button>
         </div>
       </aside>
 
       {/* --- 3. KONTEN UTAMA --- */}
-      <div className={`flex-1 flex flex-col min-h-screen transition-all duration-300 ${isMobileOpen ? "lg:ml-72" : "lg:ml-72"}`}>
+      <div className="flex-1 lg:ml-72 flex flex-col min-h-screen w-full overflow-x-hidden">
         
-        {/* TOPBAR (Jarak diperlebar agar tidak mepet) */}
-        <header className="h-32 bg-white/70 backdrop-blur-md sticky top-0 z-40 px-8 lg:px-16 flex items-center justify-between">
-          <div className="flex items-center gap-6">
-            {/* Tombol Hamburger HP */}
+        {/* TOPBAR (Tinggi dikurangi di HP agar pas) */}
+        <header className="h-24 lg:h-32 bg-white/70 backdrop-blur-md sticky top-0 z-40 px-4 lg:px-16 flex items-center justify-between border-b border-slate-100">
+          <div className="flex items-center gap-4 lg:gap-6">
             <button 
               onClick={() => setIsMobileOpen(true)}
-              className="lg:hidden p-4 bg-white border border-slate-200 rounded-2xl text-emerald-900 shadow-sm active:scale-90 transition-transform"
+              className="lg:hidden p-3 bg-white border border-slate-200 rounded-2xl text-emerald-900 shadow-sm active:scale-90"
             >
               <Menu size={24} />
             </button>
             
             <div className="flex flex-col">
-              <h2 className="font-black text-emerald-950 uppercase italic tracking-tighter text-2xl lg:text-4xl leading-tight">
+              <h2 className="font-black text-emerald-950 uppercase italic tracking-tighter text-lg lg:text-4xl leading-tight">
                 {pathname.split('/').pop()?.replace('-', ' ') || 'Overview'}
               </h2>
-              <div className="flex items-center gap-2 mt-1">
+              <div className="hidden sm:flex items-center gap-2 mt-1">
                 <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Sistem Management Aktif</p>
+                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Sistem Aktif</p>
               </div>
             </div>
           </div>
 
-          <div className="flex items-center gap-4 lg:gap-8">
-            <div className="hidden sm:flex flex-col text-right">
-               <p className="text-[12px] font-black text-emerald-950 uppercase italic leading-none">Rizal Admin</p>
-               <span className="text-[9px] font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-md mt-2 self-end shadow-sm">SUPER ADMIN</span>
+          <div className="flex items-center gap-3 lg:gap-8">
+            <div className="hidden md:flex flex-col text-right">
+              <p className="text-[12px] font-black text-emerald-950 uppercase italic leading-none">Rizal Admin</p>
+              <span className="text-[9px] font-bold text-emerald-600 mt-1 uppercase">Super Admin</span>
             </div>
-            <div className="w-14 h-14 lg:w-20 lg:h-20 bg-emerald-600 rounded-[1.5rem] lg:rounded-[2rem] flex items-center justify-center text-white font-black italic text-xl lg:text-3xl shadow-2xl shadow-emerald-200 border-4 lg:border-[6px] border-white transform hover:rotate-6 transition-all cursor-pointer">
+            <div className="w-10 h-10 lg:w-20 lg:h-20 bg-emerald-600 rounded-xl lg:rounded-[2rem] flex items-center justify-center text-white font-black italic text-sm lg:text-3xl shadow-lg border-2 lg:border-[6px] border-white">
                 RZ
             </div>
           </div>
         </header>
 
-        {/* AREA HALAMAN */}
-        <main className="px-6 lg:px-16 pb-12 pt-2 flex-1">
-          <div className="bg-white min-h-[75vh] rounded-[2.5rem] lg:rounded-[4rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.03)] border border-slate-100 p-8 lg:p-16 relative overflow-hidden">
-            {/* Dekorasi Background di Dalam Konten */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-50 rounded-full blur-3xl opacity-40 -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+        {/* AREA HALAMAN (Perbaikan Utama di Sini) */}
+        <main className="p-3 lg:px-16 lg:pb-12 lg:pt-2 flex-1 w-full overflow-x-hidden">
+          <div className="bg-white min-h-[80vh] rounded-[1.5rem] lg:rounded-[4rem] shadow-sm border border-slate-100 p-4 lg:p-16 relative">
             
-            <div className="relative z-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
-              {children}
+            {/* Wrapper Scroll Horizontal: Agar tabel Gudang/Pelanggan bisa digeser di HP */}
+            <div className="relative z-10 overflow-x-auto w-full">
+              <div className="min-w-full inline-block align-middle">
+                {children}
+              </div>
             </div>
+
+            {/* Dekorasi halus */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-50 rounded-full blur-3xl opacity-40 -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
           </div>
         </main>
 
-        <footer className="pb-10 text-center">
-            <p className="text-[9px] font-bold text-slate-300 uppercase tracking-[0.5em] italic">
-              MITRA USAHA • Integrated Management System v1.0
-            </p>
+        <footer className="pb-8 text-center opacity-30 px-4">
+          <p className="text-[8px] lg:text-[9px] font-bold text-slate-400 uppercase tracking-[0.5em] italic">
+            MITRA USAHA • Integrated Management System v1.0
+          </p>
         </footer>
       </div>
     </div>
