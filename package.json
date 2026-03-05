@@ -10,13 +10,16 @@
     "init-tailwind": "tailwindcss init -p"
   },
   "dependencies": {
+    "@prisma/client": "^7.4.2",
+    "@vercel/postgres": "latest",
+    "autoprefixer": "latest",
+    "lucide-react": "^0.576.0",
     "next": "latest",
-  "react": "latest",
-  "react-dom": "latest",
-  "tailwindcss": "latest",
-  "postcss": "latest",
-  "autoprefixer": "latest",
-  "@vercel/postgres": "latest"
+    "postcss": "latest",
+    "prisma": "^7.4.2",
+    "react": "latest",
+    "react-dom": "latest",
+    "tailwindcss": "latest"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
